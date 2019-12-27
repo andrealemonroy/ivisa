@@ -5,7 +5,8 @@
   "author": "Andrea Monroy",
   "private": true,
   "engines": {
-    "node": "10.16.3"
+    "node": "10.16.3",
+    "npm":"6.11.3"
   },
   "scripts": {
     "dev": "nuxt",
