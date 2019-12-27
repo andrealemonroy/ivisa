@@ -17,7 +17,7 @@
         <span class="item-nav-title">Mis tarjetas</span>
       </div>
       <div class="item-nav">
-        <img alt="Mi cuenta" src="../assets/icons/My account ico.svg" />
+        <img alt="Mi cuenta" src="../assets/icons/My Account ico.svg" />
         <span class="item-nav-title">Mi cuenta</span>
       </div>
     </nav>
