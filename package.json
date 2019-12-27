@@ -4,6 +4,9 @@
   "description": "ivisa-challenge",
   "author": "Andrea Monroy",
   "private": true,
+  "engines": {
+    "node": "10.16.3"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
