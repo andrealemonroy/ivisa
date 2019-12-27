@@ -1,0 +1,105 @@
+.header {
+  top: 0;
+  min-height: 3.5rem;
+  background-color: #060f26;
+  position: sticky;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+}
+@media (min-width: 544px) {
+  .navbar {
+    margin: auto;
+    width: 80%;
+  }
+}
+
+.header .logo {
+  width: 80%;
+  margin: auto;
+}
+
+.header .user {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  margin: auto;
+}
+
+.header .user .user-icon {
+  max-height: 30px;
+}
+
+.header .user p {
+  margin: auto;
+  margin-left: 20px;
+  color: #fff;
+}
+
+.banner img {
+  max-height: 40vh;
+  width: 100vw;
+}
+
+.nav-link {
+  display: flex;
+}
+
+.nav-link li {
+  padding: 2%;
+  padding-top: 2.4%;
+  list-style: none;
+  font-size: 14px;
+}
+.nav-link li a {
+  color: #fff;
+  font-family: "Montserrat-light";
+}
+
+.item-nav img {
+  max-height: 50px;
+}
+
+.item-nav {
+  width: 25%;
+  padding: 10px;
+  margin: 3px;
+  margin-bottom: 0;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0;
+}
+nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  max-width: 900px;
+}
+
+@media screen and (max-width: 768px) {
+  .item-nav span {
+    display: none;
+  }
+}
+
+.active {
+  border-top: 2px solid #0ca52f;
+  border-bottom: 3px solid #fff;
+  margin-bottom: -2px;
+}
+
+.box {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(204, 204, 204, 1);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(204, 204, 204, 1);
+  box-shadow: 0px 2px 5px 1px rgba(204, 204, 204, 1);
+}
+
+img{
+    max-height: 80px
+}
