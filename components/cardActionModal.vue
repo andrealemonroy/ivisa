@@ -42,8 +42,8 @@ export default {
         // this.img = "../assets/icons/Default card ico.svg";
         this.cards = JSON.parse(localStorage.getItem("cards"));
         this.cards.forEach(card => {
-          console.log(JSON.stringify(card) + 'card')
-          console.log(JSON.stringify(this.cardId) + 'cardID')
+          console.log(JSON.stringify(card) + "card");
+          console.log(JSON.stringify(this.cardId) + "cardID");
           if (card.cardNumber == this.cardId) {
             card.isDefault = true;
           } else {
@@ -60,6 +60,7 @@ export default {
           this.cardId
         );
       }
+      this.$router.go()
     },
     removeByAttr(arr, attr, value) {
       var i = arr.length;
