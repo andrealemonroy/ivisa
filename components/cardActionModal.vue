@@ -22,7 +22,8 @@ export default {
   props: {
     show: Boolean,
     message: {},
-    cards: Array
+    cards: Array,
+    cardId: String
   },
   data() {
     return {
@@ -44,7 +45,6 @@ export default {
     ok() {
       if (this.message.img == "default") {
         this.img = "../assets/icons/Default card ico.svg";
-        let cardNumber = localStorage.getItem("cardNumber");
         this.cards.forEach(card => {
           if (card.cardNumber === cardNumber) {
             card.isDefault = true;
@@ -54,8 +54,22 @@ export default {
         });
         localStorage.setItem("cards", this.cards);
       } else {
+        this.removeByAttr(
+          JSON.parse(localStorage.getItem("cards")),
+          "cardNumber",
+          this.cardId
+        );
         this.img = "../assets/icons/Remove payment ico.svg";
       }
+    },
+    removeByAttr(arr, attr, value) {
+      var i = arr.length;
+      while (i--) {
+        if (arr[i] && arr[i].hasOwnProperty(attr) && arr[i][attr] === value) {
+          arr.splice(i, 1);
+        }
+      }
+      return localStorage.setItem("cards", JSON.stringify(arr));
     },
     setDefault: function() {}
   }
