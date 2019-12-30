@@ -219,7 +219,8 @@ export default {
         message: "¿Esta seguro de remover su tarjeta?"
       };
     },
-    setDefaultCard() {
+    setDefaultCard(card) {
+      this.cardId = card;
       this.currentModal = true;
       this.message = {
         img: "default",
@@ -259,7 +260,7 @@ export default {
       this.addCardData = false;
     }
   },
-  created() {
+  mounted() {
     this.cards = JSON.parse(localStorage.getItem("cards"));
   }
 };

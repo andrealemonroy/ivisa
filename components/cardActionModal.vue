@@ -44,14 +44,16 @@ export default {
     },
     ok() {
       if (this.message.img == "default") {
-        this.img = "../assets/icons/Default card ico.svg";
+        // this.img = "../assets/icons/Default card ico.svg";
+        this.cards = JSON.parse(localStorage.getItem("cards"));
         this.cards.forEach(card => {
-          if (card.cardNumber === cardNumber) {
+          if (card.cardNumber === this.cardId) {
             card.isDefault = true;
           } else {
             card.isDefault = false;
           }
         });
+        console.log(this.cards);
         localStorage.setItem("cards", this.cards);
       } else {
         this.removeByAttr(
@@ -59,7 +61,7 @@ export default {
           "cardNumber",
           this.cardId
         );
-        this.img = "../assets/icons/Remove payment ico.svg";
+        // this.img = "../assets/icons/Remove payment ico.svg";
       }
     },
     removeByAttr(arr, attr, value) {
