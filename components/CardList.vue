@@ -232,14 +232,17 @@ export default {
     handleSubmit() {
       this.$refs[this.addCardForm].validate(valid => {
         if (valid) {
+          debugger;
           const payload = { ...this.addCardForm };
           console.log(payload);
-          if (this.cards.length < 1) {
-            payload.isDefault = true;
+          if (this.cards == null || this.cards.length < 1) {
+            this.addCardForm.isDefault = true;
+            this.cards = [];
+            this.cards.push(this.addCardForm);
           } else {
             payload.isDefault = false;
+            this.cards.push(payload);
           }
-          this.cards.push(payload);
           localStorage.setItem("cards", JSON.stringify(this.cards));
           this.addCardData = false;
           this.addCardForm = {};
