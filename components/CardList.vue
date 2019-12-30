@@ -72,7 +72,7 @@
         <Card v-for="card in cards" :key="card.cardNumber">
           <div v-if="card.isDefault">
             <div class="card-default">
-              <p>Default</p>
+              <p>Tarjeta predeterminada</p>
               <p>
                 {{ card.type }} **** **** **** {{ card.cardNumber.slice(12) }}
               </p>
@@ -220,7 +220,6 @@ export default {
       };
     },
     setDefaultCard(card) {
-      this.cardId = card;
       this.currentModal = true;
       this.message = {
         img: "default",
@@ -228,11 +227,11 @@ export default {
         message:
           "Esta tarjeta aparecerá como primera opción. Estas seguro(a) de cambiar esta tarjeta como predeterminada"
       };
+      this.cardId = card;
     },
     handleSubmit() {
       this.$refs[this.addCardForm].validate(valid => {
         if (valid) {
-          debugger;
           const payload = { ...this.addCardForm };
           console.log(payload);
           if (this.cards.length < 1) {
@@ -260,7 +259,7 @@ export default {
       this.addCardData = false;
     }
   },
-  mounted() {
+  created() {
     this.cards = JSON.parse(localStorage.getItem("cards"));
   }
 };

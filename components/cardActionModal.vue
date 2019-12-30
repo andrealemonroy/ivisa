@@ -33,11 +33,6 @@ export default {
   beforeDestroy() {
     this.$Modal.remove();
   },
-  computed: {
-    readlyDate() {
-      //   return moment(this.transaction.created).locale('es').format('dddd D MMMM YYYY')
-    }
-  },
   methods: {
     cancel() {
       this.$emit("close");
@@ -47,21 +42,23 @@ export default {
         // this.img = "../assets/icons/Default card ico.svg";
         this.cards = JSON.parse(localStorage.getItem("cards"));
         this.cards.forEach(card => {
-          if (card.cardNumber === this.cardId) {
+          console.log(JSON.stringify(card) + 'card')
+          console.log(JSON.stringify(this.cardId) + 'cardID')
+          if (card.cardNumber == this.cardId) {
             card.isDefault = true;
           } else {
             card.isDefault = false;
           }
         });
         console.log(this.cards);
-        localStorage.setItem("cards", this.cards);
+        localStorage.clear();
+        localStorage.setItem("cards", JSON.stringify(this.cards));
       } else {
         this.removeByAttr(
           JSON.parse(localStorage.getItem("cards")),
           "cardNumber",
           this.cardId
         );
-        // this.img = "../assets/icons/Remove payment ico.svg";
       }
     },
     removeByAttr(arr, attr, value) {
@@ -72,8 +69,7 @@ export default {
         }
       }
       return localStorage.setItem("cards", JSON.stringify(arr));
-    },
-    setDefault: function() {}
+    }
   }
 };
 </script>
