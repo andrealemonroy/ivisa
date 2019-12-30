@@ -150,11 +150,11 @@ export default {
       cards: [],
       addCardData: false,
       addCardForm: {
-        name: "Andrea",
-        cardNumber: "1234567890123456",
-        yearExpiration: "2022",
-        monthExpiration: "12",
-        securityCode: "123"
+        name: "",
+        cardNumber: "",
+        yearExpiration: "",
+        monthExpiration: "",
+        securityCode: ""
       },
       years: [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029],
       formValidate: {
