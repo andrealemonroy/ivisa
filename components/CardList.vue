@@ -88,7 +88,7 @@
           </div>
           <div v-else>
             <Row type="flex" justify="space-around">
-              <Col span="17">
+              <Col :xs="24" :lg="17">
                 <div class="card">
                   <p>
                     {{ card.type }} **** **** ****
@@ -104,7 +104,7 @@
                   </p>
                 </div></Col
               >
-              <Col span="3">
+              <Col :xs="10" :lg="3">
                 <button
                   class="remove-btn-card"
                   @click="deleteCard(card.cardNumber)"
@@ -112,7 +112,7 @@
                   Eliminar
                 </button></Col
               >
-              <Col span="3">
+              <Col :xs="10" :lg="3">
                 <button
                   class="default-btn-card"
                   @click="setDefaultCard(card.cardNumber)"
